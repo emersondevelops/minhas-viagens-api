@@ -1,19 +1,20 @@
 package com.emersonbezerra.minhasviagens;
 
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class InicioController {
 
-    @GetMapping("/inicio")
+    @GetMapping("/")
     public String exibirTelaInicial() {
-        return "Olá mundo no Spring!";
+        return "Uma API para planejamento de viagens";
     }
 
-    @PostMapping("/")
-    public String exibirTelaRaiz() {
-        return "Olá mundo no Spring na rota raiz!";
+    @GetMapping("/retorno-html")
+    public String testaRetornoComHtml() {
+        String cabecalho = "<h1 style='color:red'>Aplicação Clássica</h1>";
+        String paragrafo = "<p>Esta mensagem é um parágrafo</p>";
+        return cabecalho + paragrafo;
     }
 }
